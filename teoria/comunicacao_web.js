@@ -32,6 +32,16 @@
   Esses são alguns dos principais mas caso a minha api tenha um caso especifico esse site tem uma lista 
   https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
 
+  WEBSERVICES 
+
+  São serviços que servem para prover uma camada de comunicação entre o cliente e o servidor atraves da internet 
+  usando o protocolo http.
+  
+  
+
+
+  
+
 
 
 
