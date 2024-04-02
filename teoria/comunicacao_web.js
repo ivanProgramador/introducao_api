@@ -66,24 +66,37 @@
     PUT    -> http://meusite.com/clientes/1
 
   Embora todas pareçam a mesma rota a api vai identificar a diferença pelo 
-  verbo de requisição ou seja oque vai ser feito com o dado não pode ficar escrito na url. 
+  verbo de requisição ou seja oque vai ser feito com o dado não pode ficar escrito na url.
+  
+  RESTFULL 
+
+  A diferença entre uma api REST  e uma Api RESTFULL:
+
+  REST -> Atende a algumas especificações de aqruitetura REST 
+
+  RESTFULL -> Atende a todos os reuisitos da arquitetura REST de forma absoluta
+  
+  OS REQUISITOS SÃO 
+
+  0 - Utilizar somente uma rota para todas as requisições e tratar tudo dentro de uma rota só com base no verbo 
+      http e eos dados enviados pelo cliente.
+
+  1 - as rotas devem ser dividas por recusos por exemplo usuarios devem ter o seu prorio conjunto de rotas assim como
+      produtos ou clientes.
+
+  3 - hyper media control HATEOAS e como manual de instruções que vem junto com a rota digamos 
+      o cliente faz uma requisição GET para a rota de usuarios, a api alem de responder com a alista de usuarios 
+      manda um json mostrando os links para fazer as operações com os usuarios atraves da api caso
+      o sistema dele precise executar mais operações além de listar os usuarios.
+  
+  Essa é a base.
+
+  
+      
   
 
 
 
 
-
-
-
-  
-
-
-  
-
-
-
-
- 
- 
 
 */
