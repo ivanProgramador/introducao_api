@@ -66,9 +66,8 @@
     PUT    -> http://meusite.com/clientes/1
 
   Embora todas pareçam a mesma rota a api vai identificar a diferença pelo 
-  verbo de requisição ou seja oque vai ser feito com o dado não pode ficar escrito na url.
+  verbo de requisição ou seja oque vai ser feito com o dado não pode ficar escrito na url. 
   
-  RESTFULL 
 
   A diferença entre uma api REST  e uma Api RESTFULL:
 
