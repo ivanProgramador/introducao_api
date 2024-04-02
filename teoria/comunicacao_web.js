@@ -67,6 +67,17 @@
 
   Embora todas pareçam a mesma rota a api vai identificar a diferença pelo 
   verbo de requisição ou seja oque vai ser feito com o dado não pode ficar escrito na url. 
+
+  Rest e restiful qual e a diferença ?
+
+  um api rest tem alguma caracteristicas da aqruitetura rest, ja um apia rest full segue todos os requisitos Rest 
+  de forma a absoluta para que um api seja considerada restfull ela tem que seguir esses parametros 
+  
+  1 - usar os verbos http para executar operações
+  2 - dividir as rotas por recurso
+  3 - usar o HATEOAS para passar instruçoes de uso das rotas 
+  
+  oque é HATEOAS ?
   
 
 
