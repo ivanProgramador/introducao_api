@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const app = express;
+const app = express();
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
@@ -29,9 +29,12 @@ var DB ={
     ]
 }
 
-app.get("/",(req,res)=>{
-    
+//rota de listagem geral
+app.get("/games",(req,res)=>{
 
+    res.statusCode = 200; //retornado o status da requisição
+    res.json(DB.GAMES); //retornando o banco de dados em json
+    
 });
 
 
