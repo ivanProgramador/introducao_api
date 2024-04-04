@@ -73,6 +73,28 @@ app.get("/games/:id",(req,res)=>{
 })
 
 
+//rota de cadastro 
+
+app.post("/games",(req,res)=>{
+
+    //Desestruturando o body da requisição
+    //para separar os valores do objeto body 
+    var {title,price,year} = req.body;
+   
+    // criando um novo objeto dentro do arrys de games 
+    // o id eu inventei porque eu nãotenho um gerador de id 
+    // automatico nesse momento 
+    
+    DB.GAMES.push({
+        id:2323,
+        title,
+        price,
+        year
+    })
+
+})
+
+
 
 app.listen(8080,()=>{
     console.log("Api Rodando");
