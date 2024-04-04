@@ -32,10 +32,45 @@ var DB ={
 //rota de listagem geral
 app.get("/games",(req,res)=>{
 
-    res.statusCode = 200; //retornado o status da requisição
+    res.statusCode = 200; //retornado o status da requisição 200 signifca ok que esta tudo certo 
     res.json(DB.GAMES); //retornando o banco de dados em json
     
 });
+
+//rota de seleção unica 
+
+app.get("/games/:id",(req,res)=>{
+
+    if(isNaN(req.params.id)){
+
+        res.sendStatus(400); // se op id não for uma numero ele retorna o status bad request erro de sintaxe
+
+    }else{
+
+        //recebendo o id e convertendo ele para inteiro
+        
+        var id = parseInt(req.params.id);
+
+        //fazendo um pesquisa no array de jogos por um objeto que tenha o id igual a o que veio na requisição
+        // se houver um jogo com o mesmo id ele vai para variavel game  
+
+        var game = DB.GAMES.find(g => g.id == id);
+
+        //se o game for diferente de undefined 
+        if(game != undefined){
+
+            res.statusCode = 200; //retono o status ok 
+            res.json(game); // e retorno o jogo no formato json
+
+        }else{
+
+            res.sendStatus(404); // se não eu retorno 404 "o recurso solicitado não foi encontrado"
+
+        }
+
+    }
+
+})
 
 
 
