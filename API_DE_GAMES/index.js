@@ -64,7 +64,9 @@ app.get("/games/:id",(req,res)=>{
 
         }else{
 
-            res.sendStatus(404); // se não eu retorno 404 "o recurso solicitado não foi encontrado"
+             //ele ate acessa o servidor mas ele não acha oque esta porcurando por isso ele retorna 404
+             // se não eu retorno 404 "o recurso solicitado não foi encontrado"
+            res.sendStatus(404); 
 
         }
 
@@ -92,7 +94,28 @@ app.post("/games",(req,res)=>{
         year
     })
 
-})
+});
+
+//rota para apagar um jogo 
+
+app.delete("/games/:id",(req,res)=>{
+    if(isNaN(req.params.id)){
+        res.sendStatus(400)
+
+    }else{
+
+        var id = parseInt(req.params.id);
+        var index = DB.GAMES.findIndex(g=> g.id == id);
+
+        if(index == -1){
+            res.sendStatus(404);
+
+        }else{
+            DB.GAMES.splice(index,1);
+            res.sendStatus(200);
+        }
+   }
+});
 
 
 
