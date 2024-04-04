@@ -117,6 +117,64 @@ app.delete("/games/:id",(req,res)=>{
    }
 });
 
+//rota de edição 
+
+app.put("/games/:id",(req,res)=>{
+
+    if(isNaN(req.params.id)){
+
+        res.sendStatus(400);
+
+    }else{
+
+        var id = parseInt(req.params.id);
+        var game = DB.GAMES.find(g=> g.id == id);
+
+        if(game != undefined){
+
+            var {title,price,year} = req.body;
+
+            if(title != undefined){
+                game.title = title;
+            }
+            if(price != undefined){
+                game.price = price;
+            }
+            if(year != undefined){
+                game.year = year;
+            }
+
+            res.sendStatus(200);
+
+
+        }
+
+        
+   }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 app.listen(8080,()=>{
